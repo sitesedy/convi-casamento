@@ -460,10 +460,10 @@
 
         let isOpened = false;
 
-        // Garante que o áudio vai para os 84 segundos assim que estiver pronto
+        // Garante que o áudio vai para os 30 segundos assim que estiver pronto
         audio.addEventListener('canplay', () => {
-            if (audio.currentTime < 84) {
-                audio.currentTime = 84;
+            if (audio.currentTime < 30) {
+                audio.currentTime = 30;
             }
         });
 
@@ -472,8 +472,8 @@
             if (isOpened) return;
             isOpened = true;
 
-            // Força a posição nos 84s e dá Play
-            audio.currentTime = 84;
+            // Força a posição nos 30s e dá Play
+            audio.currentTime = 30;
             const playPromise = audio.play();
 
             if (playPromise !== undefined) {
@@ -503,8 +503,8 @@
         // Alternar Play e Pause no Botão Flutuante
         btn.addEventListener('click', () => {
             if (audio.paused) {
-                if (audio.currentTime < 84) {
-                    audio.currentTime = 84;
+                if (audio.currentTime < 30) {
+                    audio.currentTime = 30;
                 }
                 audio.play();
                 icon.className = "fas fa-pause text-sm";
